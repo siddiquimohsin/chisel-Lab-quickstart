@@ -1,7 +1,7 @@
 package LAB5
 import chisel3._
 import chisel3.util._
-class eMux[T <: Data ](gen:T , gen1:T) extends Module {
+class eMux[T <: Data ](gen:T,gen1:T) extends Module {
 val io = IO(new Bundle{
 val out = Output(gen)
 val in1 = Input(gen)
