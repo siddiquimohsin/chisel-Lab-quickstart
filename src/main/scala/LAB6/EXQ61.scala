@@ -2,12 +2,12 @@ package LAB6
 import chisel3._
 import chisel3.util._
 
-class shift_register(i:Int) extends Module {
+class shift_register(width:Int) extends Module {
 val io = IO (new Bundle {
-val in = Input(UInt(i.W))
+val in = Input(UInt(width.W))
 val out = Output(UInt(1.W))
 })
-val state = RegInit(0.U(i.W))
+val state = RegInit(0.U(width.W))
 val load_shift = RegInit(0.U(1.W))
 
 io.out := 0.U

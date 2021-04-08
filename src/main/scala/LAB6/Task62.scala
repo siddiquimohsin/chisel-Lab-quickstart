@@ -8,7 +8,7 @@ class counter_with_XOR(max :Int) extends Module{
     })
     val count = RegInit(0.U(log2Ceil(max).W))
 
-    when(count(log2Ceil(max).U-1.U)===1.U){
+    when(count(log2Ceil(max).U-1.U) ^ 0.U === 1.U){
         count := 0.U
         io.out := count
     }.otherwise{

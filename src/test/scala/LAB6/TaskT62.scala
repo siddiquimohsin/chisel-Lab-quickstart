@@ -6,7 +6,7 @@ import chisel3.experimental.BundleLiterals._
 
 class TaskT62 extends FreeSpec with ChiselScalatestTester{
     "TaskT62" in {
-        test(new counter_with_XOR(16)){c =>
+        test(new counter_with_XOR(13)){c =>
         c.clock.step(100)
         }
     }

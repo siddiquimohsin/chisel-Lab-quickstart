@@ -8,7 +8,9 @@ class TaskT64 extends FreeSpec with ChiselScalatestTester{
     "TaskT64" in {
         test(new up_downcounter(8)){c =>
         c.io.control.poke(1.U)
-        c.clock.step(20)
+        c.clock.step(8)
+        c.io.control.poke(0.U)
+        c.clock.step(8)
         }
     }
 }

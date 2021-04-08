@@ -6,8 +6,8 @@ import chisel3.experimental.BundleLiterals._
 
 class EXQT62 extends FreeSpec with ChiselScalatestTester{
     "EXQT62" in {
-        test(new counter(2)){c =>
-        c.clock.step(1)
+        test(new counter(4)){c =>
+        c.clock.step(10)
         c.io.out.expect(1.U)
         }
     }
