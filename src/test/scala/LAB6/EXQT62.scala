@@ -8,7 +8,7 @@ class EXQT62 extends FreeSpec with ChiselScalatestTester{
     "EXQT62" in {
         test(new counter(4)){c =>
         c.clock.step(10)
-        c.io.out.expect(1.U)
+        c.io.out.expect(2.U)
         }
     }
 }
