@@ -5,7 +5,7 @@ import org.scalatest.FreeSpec
 import chisel3.experimental.BundleLiterals._
 import scala.util.Random
 
-class TaskT4 extends FreeSpec with ChiselScalatestTester{
+class TaskT42 extends FreeSpec with ChiselScalatestTester{
     val PC_array = Array(0.U,4.U,8.U,12.U,16.U,20.U)
     val Instruction_array = Array("h00200093","h00200113","h00400193","h00400213","h00600293","h00600313")
     val PC = PC_array(Random.nextInt(7))
