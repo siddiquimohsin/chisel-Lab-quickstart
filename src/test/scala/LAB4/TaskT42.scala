@@ -23,7 +23,7 @@ class TaskT42 extends FreeSpec with ChiselScalatestTester{
         }
 
 
-    "TestT4" in {
+    "TaskT42" in {
         test(new Immediate_Gen){c =>
             c.io.instr.poke(Instruction)
             c.io.PC.poke(PC)

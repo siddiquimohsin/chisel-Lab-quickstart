@@ -14,23 +14,25 @@ class Manchester extends Bundle {
 
 class Task72 extends Module{
     val io =IO (new Manchester)
+    val s0 :: s1 :: Nil = Enum(2)
+    val state = RegInit(s0)
     val register = RegInit(0.U(8.W))
     io.out:=0.U
     io.flag:=0.U
-    switch (io.start){
-        is (true.B){
-            when (io.in === 1.U){
-                register:= register << 1.U | io.in
-                io.out:=register
-
-            }.otherwise{
-                register:= register << 1.U
-                io.out := register
-            }
-        }
-        is (false.B){
+    when(state === s0){
+        when(io.start === true.B){
+            state:=s1        
+        }.otherwise{
             io.out:=register
-            io.flag:=0.U
+            io.flag:=false.B
+        }
+    }.elsewhen(state === s1){
+        when(io.start === false.B){
+            state := s0
+        }.otherwise{
+            register:=(register << 1.U) | io.in
+            io.out:=register
+            io.flag:=true.B
         }
     }
 }
