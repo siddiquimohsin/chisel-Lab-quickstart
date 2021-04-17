@@ -12,6 +12,6 @@ class instruction extends Bundle{
 class EXQ83 extends Module{
     val io = IO(new instruction)
     val mem = Mem(32, UInt(32.W))
-    loadMemoryFromFile(mem, "/home/mohsin/chisel-quickstart/data.txt")
+    loadMemoryFromFile(mem, "/home/mohsin/chisel-quickstart/src/test/scala/LAB8/data.txt")
     io.inst := mem(io.addr)
 }
